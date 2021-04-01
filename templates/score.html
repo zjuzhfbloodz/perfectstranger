@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+
+{% block title %}Score{% endblock %}
+
+{% block content %}
+<h2>How is your mental health?</h2>
+<div>
+    <p>Your text score are below:</p>
+    {% for post in post_info %}
+    <table>
+        <tr>
+            <td>Text:</td>
+            <td>{{ post['content'] }}</td>
+        </tr>
+        <tr>
+            <td>Date:</td>
+            <td>{{ post['created_date'] }}</td>
+        </tr>
+        <tr>
+            <td>Score:</td>
+            <td>{{ post['score'] }}</td>
+        </tr>
+    </table>
+    {% endfor %}
+</div>
+{% endblock %}
